@@ -2,9 +2,32 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Index</title>
+        <title>{{title}}</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     </head>
     <body>
-        Welcome to Eduloge
+        {{bdata}}
+        <br>
+
+        {% for n in clist%}
+            <div>{{forloop.last}} {{n}}</div>
+        {% endfor %}
+        <br>
+
+
+       
+        <table class="container-fluid table table-bordered" border="1" cellpadding="10">
+            <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+            </tr>
+            {% for d in student_details%}
+            <tr>
+                <td>{{d.name}}</td>
+                <td>{{d.phone}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        
     </body>
 </html>
