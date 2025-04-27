@@ -1,0 +1,39 @@
+@model SMS.Models.Founder
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Founder</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="FounderId" />
+            <div class="form-group">
+                <label asp-for="FounderName" class="control-label"></label>
+                <input asp-for="FounderName" class="form-control" />
+                <span asp-validation-for="FounderName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FounterContact" class="control-label"></label>
+                <input asp-for="FounterContact" class="form-control" />
+                <span asp-validation-for="FounterContact" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
